@@ -14,7 +14,7 @@ const Home = () => {
               className="text-center md:text-left space-y-6"
           >
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  Hi guys, I'm <span className="text-night dark:text-sand-shadow">Harshavardhan Reddy Nagarthi</span>
+                  Hi guysssss, I'm <span className="text-night dark:text-sand-shadow">Harshavardhan Reddy Nagarthi</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300">
                   Software Developer & Machine Learning Enthusiast
