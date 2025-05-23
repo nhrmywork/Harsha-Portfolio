@@ -11,7 +11,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import NotFound from "./pages/NotFound";
 import Timeline from "./pages/Timeline";
-import { PortfolioProvider } from "./components/PortfolioContext";
+import { PortfolioProvider } from "./context/PortfolioContext";
 
 function App() {
   return (

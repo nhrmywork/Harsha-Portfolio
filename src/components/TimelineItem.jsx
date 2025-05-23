@@ -25,7 +25,7 @@ const TimelineItem = ({ type, title, organization, duration, description }) => {
         {isEducation ? "🎓" : "💼"}
       </span> */}
 
-      <div className="" absolute left-0 top-3>
+      <div className="absolute left-0 top-3">
         <Dot isEducation={isEducation} />
       </div>
 

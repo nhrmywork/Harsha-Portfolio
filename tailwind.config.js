@@ -29,6 +29,14 @@ export default {
           DEFAULT: '#2d545e',
           'shadow': '#12343b',
         },
+        'black': {
+          DEFAULT: '#000000',
+          'shadow': '#000000',
+        },
+        'white': {
+          DEFAULT: '#ffffff',
+          'shadow': '#ffffff',
+        },
       },
     },
   },
