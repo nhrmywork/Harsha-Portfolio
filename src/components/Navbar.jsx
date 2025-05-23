@@ -43,61 +43,66 @@ const Navbar = () => {
 
   const isActive = (path) => location.pathname === path;
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link
-          to="/"
-          className="text-xl font-bold text-night dark:text-sand-shadow "
-        >
-          NHR
-        </Link>
+    <nav className="w-[95%] h-[70px] mx-auto sticky top-4">
+      <div className="relative w-full h-full bg-black dark:bg-white backdrop-blur-xl rounded-2xl border border-white/20 dark:border-gray-700/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 dark:from-blue-400/10 dark:to-purple-400/10 rounded-2xl"></div>
+        <div className="relative max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
+          {/* Logo */}
+          <Link
+            to="/"
+            className="text-xl font-bold text-night dark:text-sand-shadow"
+          >
+            <img src="../../public/icon-white-circle.png" alt="logo" className="w-10 h-10" />
+          </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`text-md font-medium hover:text-blue-600 dark:hover:text-blue-400 transition ${
-                isActive(link.path)
-                  ? "text-blue-600 dark:text-blue-400 underline underline-offset-4"
-                  : "text-gray-700 dark:text-gray-300"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <ThemeToggle />
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`text-md font-medium hover:text-blue-600 dark:hover:text-blue-400 transition ${
+                  isActive(link.path)
+                    ? "text-blue-600 dark:text-blue-400 underline underline-offset-4"
+                    : "text-gray-700 dark:text-gray-300"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <ThemeToggle />
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden text-gray-700 dark:text-gray-300"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-gray-700 dark:text-gray-300"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2">
+        <div className="md:hidden absolute top-[120px] left-[2.5%] w-[95%] bg-gradient-to-br from-white/40 to-white/20 dark:from-gray-900/40 dark:to-gray-800/20 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-gray-700/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] p-4 space-y-2">
           {links.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className={`block text-md font-medium py-2 rounded-md ${
+              className={`block text-md font-medium py-2 px-4 rounded-md ${
                 isActive(link.path)
-                  ? "bg-blue-100 text-blue-600 dark:bg-blue-800 dark:text-white"
-                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  ? "bg-blue-100/50 text-blue-600 dark:bg-blue-800/50 dark:text-white"
+                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
               }`}
             >
               {link.name}
             </Link>
           ))}
-          <ThemeToggle />
+          <div className="p-4">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </nav>
