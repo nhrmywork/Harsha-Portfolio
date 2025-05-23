@@ -1,0 +1,22 @@
+.name-container {
+    background: transparent;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .animated-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    fill: none;
+    stroke: #00ffcc;
+    stroke-width: 1px;
+  }
+  
+  .text-path {
+    fill: none;
+    stroke: #00ffcc;
+    stroke-width: 1px;
+  }
+  
