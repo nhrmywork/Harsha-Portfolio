@@ -1,9 +1,7 @@
-// src/components/TimelineItem.jsx
 import { motion } from "framer-motion";
+import Dot from "./Dot";
 
 const TimelineItem = ({ type, title, organization, duration, description }) => {
-  // type: "education" or "experience"
-  const Dot = ({ isEducation }) => type === "education";
   const isEducation = type === "education";
 
   return (
@@ -15,17 +13,7 @@ const TimelineItem = ({ type, title, organization, duration, description }) => {
       transition={{ duration: 0.6 }}
     >
       {/* Dot */}
-      {/* <span
-        className={`absolute left-0 top-2 w-6 h-6 rounded-full border-4 ${
-          isEducation
-            ? "border-indigo-600 bg-indigo-100 dark:bg-indigo-600 dark:border-indigo-300"
-            : "border-green-600 bg-green-100 dark:bg-green-600 dark:border-green-300"
-        } flex items-center justify-center text-white text-lg`}
-      >
-        {isEducation ? "🎓" : "💼"}
-      </span> */}
-
-      <div className="" absolute left-0 top-3>
+      <div className="absolute left-0 top-3">
         <Dot isEducation={isEducation} />
       </div>
 
