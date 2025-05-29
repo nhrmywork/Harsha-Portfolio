@@ -37,3 +37,4 @@ const Dot = ({ isEducation }) => (
     </div>
   );
   
+export default Dot;
