@@ -14,10 +14,9 @@ const Home = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <ParticlesBg />
       
-      {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -34,12 +33,12 @@ const Home = () => {
                 transition={{ delay: 0.2 }}
                 className="flex flex-col gap-3"
               >
-                <span className="text-blue-600 dark:text-blue-400 text-lg font-medium">
+                <span className="text-blue-600 dark:text-blue-400 text-lg font-medium tracking-wider">
                   Hello, I'm
                 </span>
-                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white">
+                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
                   Harshavardhan
-                  <span className="block mt-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  <span className="block mt-2 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                     Reddy Nagarthi
                   </span>
                 </h1>
@@ -49,7 +48,7 @@ const Home = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl"
+                className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed"
               >
                 A passionate Software Developer & ML Enthusiast crafting elegant solutions 
                 for tomorrow's challenges. Specializing in full-stack development and 
@@ -64,13 +63,13 @@ const Home = () => {
               >
                 <a
                   href="#contact"
-                  className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 flex items-center gap-2"
                 >
                   Let's Connect
                 </a>
                 <a
                   href="/resume.pdf"
-                  className="px-8 py-4 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
                 >
                   View Resume
                 </a>
@@ -83,15 +82,17 @@ const Home = () => {
                 className="flex gap-6 pt-4"
               >
                 {socialLinks.map((social, index) => (
-                  <a
+                  <motion.a
                     key={social.label}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     <social.icon className="w-7 h-7" />
-                  </a>
+                  </motion.a>
                 ))}
               </motion.div>
             </motion.div>
@@ -104,12 +105,12 @@ const Home = () => {
               className="lg:col-span-5 relative"
             >
               <div className="relative w-72 h-72 mx-auto lg:w-96 lg:h-96">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl rotate-6 blur-xl opacity-30 animate-pulse"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl -rotate-6 blur-xl opacity-30 animate-pulse delay-75"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 rounded-2xl rotate-6 blur-xl opacity-30 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 rounded-2xl -rotate-6 blur-xl opacity-30 animate-pulse delay-75"></div>
                 <img
                   src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
                   alt="Profile"
-                  className="relative rounded-2xl object-cover w-full h-full shadow-2xl"
+                  className="relative rounded-2xl object-cover w-full h-full shadow-2xl ring-4 ring-white dark:ring-gray-800"
                 />
               </div>
             </motion.div>
